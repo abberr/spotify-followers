@@ -1,0 +1,8 @@
+spotify:
+  baseUrl: https://api.spotify.com/v1/
+  oauth2:
+    client:
+      grantType: client_credentials
+      clientId: ${CLIENT_ID}
+      clientSecret: ${CLIENT_SECRET}
+      accessTokenUri: https://accounts.spotify.com/api/token
