@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.*;
 import se.albin.spotifyfollowers.model.Artist;
-import se.albin.spotifyfollowers.service.TokenHandlerService;
 import se.albin.spotifyfollowers.service.SpotifyArtistService;
+import se.albin.spotifyfollowers.service.TokenHandlerService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +36,7 @@ public class ArtistController {
         for (String id : ids.split(",")) {
             artists.add(spotifyArtistService.getArtist(id));
         }
-        artists.sort((a1,a2) -> a1.getFollowersPerDay() > a2.getFollowersPerDay() ? -1 : 1);
+        artists.sort((a1, a2) -> a1.getFollowersPerDay() > a2.getFollowersPerDay() ? -1 : 1);
 
         return artists;
     }

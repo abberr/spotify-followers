@@ -6,22 +6,22 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
-import se.albin.spotifyfollowers.security.Oauth2Interceptor;
+import se.albin.spotifyfollowers.interceptor.Oauth2Interceptor;
 
 @SpringBootApplication
 public class SpotifyFollowersApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpotifyFollowersApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpotifyFollowersApplication.class, args);
+    }
 
-	@Autowired
+    @Autowired
     Oauth2Interceptor oauth2Interceptor;
 
-	@Bean
-	public RestTemplate restTemplate(RestTemplateBuilder builder) {
-		return builder
-				.additionalInterceptors(oauth2Interceptor)
-				.build();
-	}
+    @Bean
+    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+        return builder
+                .additionalInterceptors(oauth2Interceptor)
+                .build();
+    }
 }

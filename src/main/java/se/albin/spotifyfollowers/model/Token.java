@@ -18,7 +18,7 @@ public class Token {
 
     public void setExpires_in(long expires_in) {
         this.expires_in = expires_in;
-        this.expireDate = Instant.now().toEpochMilli() + expires_in*1000;
+        this.expireDate = Instant.now().toEpochMilli() + expires_in * 1000;
     }
 
 }

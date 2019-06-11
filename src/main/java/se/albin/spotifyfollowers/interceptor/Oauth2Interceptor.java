@@ -1,4 +1,4 @@
-package se.albin.spotifyfollowers.security;
+package se.albin.spotifyfollowers.interceptor;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
